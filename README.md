@@ -26,3 +26,8 @@ How to use:
 1. Navigate application thru browser : localhost:8000
 2. Create an account and login to grant access to the application
 3. After logging in successfully, you can search up 10 github users and the application will return the details per user alphabetically ordered by name, then application will attempt to communicate first to the Redis server and pull the request from there if it is already been cached if not the application will send an API request to github and fetch user data and save to Redis server for 2 minutes.
+
+For bonus challenge:
+1. Copy (bonus_challenge.php) file to C:\xampp\htdocs
+2. Open browser and navigate the file : localhost/bonus_challenge.php
+3. By default the file calculates hamming distance between 1 and 4 but we can try to change the values by opening and editing the file and method hammingDistance(1, 4) and refresh the browser to calculate again the hamming distance between the two new numbers
