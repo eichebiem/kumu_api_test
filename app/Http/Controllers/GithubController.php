@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Http;
+use App\Http\Requests\SearchGithubRequest;
 
 class GithubController extends Controller
 {
-    public function search(Request $request) {
+    public function search(SearchGithubRequest $request) {
+        $request->validated();
+
         $results = [];
 
         foreach($request->usernames as $username) {

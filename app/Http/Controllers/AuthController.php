@@ -42,7 +42,11 @@ class AuthController extends Controller
             ]);
         }
     
-        return $user->createToken($request->device_name)->plainTextToken;
+        $token = $user->createToken($request->device_name)->plainTextToken;
+
+        return response([
+            'Bearer' => $token
+        ]);
     }
 
     public function logout(Request $request) {
